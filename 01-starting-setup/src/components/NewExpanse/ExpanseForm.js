@@ -30,8 +30,9 @@ const ExpanseForm = (props) => {
   };
 
   const dateChangedHandler = (event) => {
+    // setEnteredDate(event.target.value);
     setEnteredDate(event.target.value);
-    console.log(event.target.value);
+    console.log("user inputed date"+typeof(event.target.value));
   };
 
   const formSubmissionHandler = (event) => {
@@ -39,7 +40,7 @@ const ExpanseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      date: enteredDate,
+      date: new Date(enteredDate),
       amount: enteredAmount,
     };
     console.log(expenseData);
@@ -52,8 +53,8 @@ const ExpanseForm = (props) => {
 
   return (
     <form onSubmit={formSubmissionHandler}>
-      <div className="new-expense__control">
-        <div className="new-expense__controls">
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
           <label>Title</label>
           <input
             type="text"
@@ -61,7 +62,7 @@ const ExpanseForm = (props) => {
             onChange={titleChangedHandler}
           />
         </div>
-        <div className="new-expense__controls">
+        <div className="new-expense__control">
           <label>Amount</label>
           <input
             type="number"
@@ -71,7 +72,7 @@ const ExpanseForm = (props) => {
             onChange={amountChangedHandler}
           />
         </div>
-        <div className="new-expense__controls">
+        <div className="new-expense__control">
           <label>Date</label>
           <input
             type="date"

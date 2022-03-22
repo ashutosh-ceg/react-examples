@@ -1,29 +1,28 @@
 import React, {useState} from 'react';
-//import React from "react";
+
 import Expanses from "./components/Expenses/Expanses";
 import NewExpanse from "./components/NewExpanse/NewExpanse";
-//import { useState } from "react/cjs/react.production.min";
 
 const DUMMY_EXPENSE = [
   {
     title: "Soap",
     amount: 299,
-   // date: new Date(2019, 1, 1),
+    date: new Date(2019, 1, 1),
   },
   {
     title: "Sugar",
     amount: 400,
-    //date: new Date(2020, 2, 4),
+    date: new Date(2020, 2, 4),
   },
   {
     title: "Flour",
     amount: 300,
-    //date: new Date(2021, 3, 6),
+    date: new Date(2021, 3, 6),
   },
   {
     title: "Oil",
     amount: 4000,
-    //date: new Date(2022, 5, 5),
+    date: new Date(2022, 5, 5),
   },
 ];
 
@@ -33,7 +32,7 @@ const App = () => {
   // para.textContent="This is another paragraph";
   // document.getElementById("root").append(para);
   
-  const [expenses,setExpenses]=useState(DUMMY_EXPENSE);
+  const [expenses, setExpenses]=useState(DUMMY_EXPENSE);
 
   const addExpenseHandler = (expense) => {
     console.log("In App.js");
